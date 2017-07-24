@@ -1,0 +1,80 @@
+<!doctype HTML>
+<html>
+	<head> <!--
+    Challenge 2:
+  1. Create a <div> below your dropdown boxes (give it an ID).
+  2. Remove the alert you created previously. This time, when the button is pressed:
+    a) create an array called "deck" that contains all the possible card pairs (according to the user's selection) as objects in the form [{card1v:A,card1s:c,card2v:4,card2s:d},{card1v:A,card1s:c,card2v:4,card2s:c}.....]
+    b) display just the first card pair in the div you created, in the form Ac4d (for example) -->
+		<title>Anything I want</title>
+        <script type="text/javascript">
+     
+        let deck = [{card1v:'A',card1s:'&clubs;',card2v:'6',card2s:'&spades;'},
+         {card1v:'2',card1s:'&hearts;',card2v:'5',card2s:'&diams;'},
+         {card1v:'3',card1s:'&spades;',card2v:'7',card2s:'&hearts;'}];
+         function printDeck(){
+            for (let i = 0; i < deck.length; i++){
+                let thisPair = deck[i].card1v +
+                deck[i].card1s +
+                deck[i].card2v +
+                deck[i].card2s;
+                alert(thisPair);
+                document.getElementById("cardDisplay").innerHTML += thisPair + '<br>'
+            }
+         }
+
+        </script>
+	</head>
+		
+<body>
+    <select id="cardOneValue">
+        <option value="Any">Any</option>
+        <option value="A">Ace</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="J">Jack</option>
+        <option value="Q">Queen</option>
+        <option value="K">King</option>
+    </select>
+    <select id="cardOneSuit">
+        <option value="hearts">&hearts;</option>
+        <option value="diamonds">&diams;</option>
+        <option value="spades">&spades;</option>
+        <option value="clubs">&clubs;</option>
+    </select>
+
+    <select id="cardTwoValue">
+        <option value="Any">Any</option>
+        <option value="A">Ace</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="J">Jack</option>
+        <option value="Q">Queen</option>
+        <option value="K">King</option>
+    </select>
+    <select id="cardTwoSuit">
+         <option value="hearts">&hearts;</option>
+        <option value="diamonds">&diams;</option>
+        <option 	
+	value="spades">&spades;</option>
+        <option value="clubs">&clubs;</option>
+    </select>
+    <input type="button" onclick="printDeck()" value="GO"></input>
+    <div id="cardDisplay"></div>
+	</body>
+
+</html>
